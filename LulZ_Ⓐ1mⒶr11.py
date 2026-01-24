@@ -24,7 +24,7 @@ def args():
 def update():
     splash00 = """
         +----------------------------------+
-        | nuclei&xray检查更新ing         
+        | Fuck The System Forever         
         +----------------------------------+
     """
     print(splash00)
@@ -32,7 +32,7 @@ def update():
     os.system('./xray_linux_amd64 upgrade')
     splash03 = """
         +----------------------------------+
-        | 检查完毕，开扫
+        | lulz_aimae11 created for kroke
         +----------------------------------+
     """
     print(splash03)
@@ -40,13 +40,13 @@ def update():
 
 def check_args(args):
     if not os.path.exists(args.input):
-        print('ip文件不存在')
+        print('ip')
         exit()
     if not args.port:
-        print('请输入端口参数')
+        print('Number of ports to scan')
         exit()
     if not args.rate:
-        print('请输入扫描速率(例：-rate 2000)')
+        print('Enter the scan rate (example).：-rate 2000)')
         exit()
     return args
 
@@ -66,16 +66,16 @@ def masscan2httpx2nuclei_main():
     if os.path.getsize("masscan.txt") == 0:
         splash3 = """
             +----------------------------------+
-            | 无端口开放，程序已退出!          
+            |No port open, program exited!         
             +----------------------------------+
         """
         print(splash3)
         exit()
     else :
         splash4 = """
-            +----------------------------------+
-            | Masscan扫描结果解析并调用httpx   
-            +----------------------------------+
+            +------------------------------------------+
+            | Masscan scan results parse and call httpx   
+            +------------------------------------------+
         """
         print(splash4)
         masscanfile = open("masscan.txt", "r")
@@ -100,45 +100,45 @@ def masscan2httpx2nuclei_main():
         print(splash2)
     else:
         splash5 = """
-            +----------------------------------+
-            | 未发现解析后的masscan端口结果    
-            +----------------------------------+
+            +--------------------------------------------------+
+            | No results were found for the parsed masscan port    
+            +--------------------------------------------------+
         """
         print(splash5)
         exit()
     if os.path.exists("httpxresult.txt"):
-        os.system('./nuclei -l httpxresult.txt -s medium,high,critical -o nucleiresult.txt')
-        os.system('./xray_linux_amd64 webscan -url-file httpxresult.txt --html-output xray.html')
+        os.system('nuclei -l httpxresult.txt -s medium,high,critical -o nucleiresult.txt')
+        os.system('xray_linux_amd64 webscan -url-file httpxresult.txt --html-output xray.html')
         os.remove("httpxresult.txt")
         os.remove("masscanconvert.txt")
     else:
-        print("扫描结果未发现http协议")
+        print("The scan results did not find the http protocol")
         exit()
     if os.path.exists("nucleiresult.txt"):
         splash6 = """
-            +----------------------------------+
-            | 扫描完成。请查看nucleiresult.txt 
-            +----------------------------------+
+            +----------------------------------------+
+            |The scan is complete. Please check it out 
+            +----------------------------------------+
         """
         print(splash6)
     else:
         splash7 = """
-            +----------------------------------+
-            | nuclei未发现中高危漏洞                
-            +----------------------------------+
+            +----------------------------------------------------------+
+            | nuclei No medium and high-risk vulnerabilities were found               
+            +----------------------------------------------------------+
         """
         print(splash7)
     if os.path.exists("xray.html"):
         splash8 = """
-            +----------------------------------+
-            | 扫描完成。请查看xray.html        
-            +----------------------------------+
+            +----------------------------------------------+
+            | The scan is complete. Please check 看xray.html        
+            +----------------------------------------------+
         """
         print(splash8)
     else:
         splash9 = """
             +----------------------------------+
-            | xray未发现漏洞                    
+            | xray No vulnerabilities found                    
             +----------------------------------+
         """
         print(splash9)
