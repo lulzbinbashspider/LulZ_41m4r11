@@ -14,10 +14,10 @@ def biaoti():
     print(splash1)
 
 def args():
-    parser = argparse.ArgumentParser(description='Masscan2Httpx2Nuclei')
-    parser.add_argument('-i', '--input', help='参考masscan -iL', required=True)
-    parser.add_argument('-p', '--port',help='参考masscan -p', required=True)
-    parser.add_argument('-rate','--rate', help='参考masscan速率rate', required=True)
+    parser = argparse.ArgumentParser(description='LulZ_41m4r11')
+    parser.add_argument('-i', '--input', help='masscan -iL', required=True)
+    parser.add_argument('-p', '--port',help='masscan -p', required=True)
+    parser.add_argument('-rate','--rate', help='masscan rate', required=True)
     args = parser.parse_args()
     return args
 
@@ -28,11 +28,11 @@ def update():
         +----------------------------------+
     """
     print(splash00)
-    os.system('./nuclei -update')
+    os.system('nuclei -update')
     os.system('./xray_linux_amd64 upgrade')
     splash03 = """
         +----------------------------------+
-        | lulz_aimae11 created for kroke
+        | lulz for aimar11 created for kroketon 
         +----------------------------------+
     """
     print(splash03)
@@ -90,7 +90,7 @@ def masscan2httpx2nuclei_main():
                     f.close()
         masscanfile.close()
     if os.path.exists("masscan.txt"):
-        os.system('./httpx -l masscanconvert.txt -nc -o httpxresult.txt')
+        os.system('httpx -l masscanconvert.txt -nc -o httpxresult.txt')
         os.remove("masscan.txt")
         splash2 = """
             +----------------------------------+
@@ -108,7 +108,7 @@ def masscan2httpx2nuclei_main():
         exit()
     if os.path.exists("httpxresult.txt"):
         os.system('nuclei -l httpxresult.txt -s medium,high,critical -o nucleiresult.txt')
-        os.system('xray_linux_amd64 webscan -url-file httpxresult.txt --html-output xray.html')
+        os.system('./xray_linux_amd64 webscan -url-file httpxresult.txt --html-output xray.html')
         os.remove("httpxresult.txt")
         os.remove("masscanconvert.txt")
     else:
@@ -148,8 +148,8 @@ def masscan2httpx2nuclei_main():
 def main():
     biaoti()
     update()
-    masscan2httpx2nuclei(args())
-    masscan2httpx2nuclei_main()
+    LulZ_41m4r11(args())
+    LulZ_41m4r11_main()
 
 if __name__ == '__main__':
     main()
